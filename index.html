@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parking Fee Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Parking Fee Calculator</h1>
+      <p>Choose a vehicle and enter the parking time.</p>
+    </header>
+
+    <div class="calculator">
+      <section class="card">
+        <h2>Parking Details</h2>
+
+        <label>Vehicle Type</label>
+        <div class="vehicle-buttons">
+          <button class="vehicle-btn" data-vehicle="bike">Two-Wheeler</button>
+          <button class="vehicle-btn active" data-vehicle="car">Car</button>
+          <button class="vehicle-btn" data-vehicle="suv">SUV / Large</button>
+        </div>
+
+        <label for="entryDateTime">Entry Date &amp; Time</label>
+        <input type="datetime-local" id="entryDateTime">
+
+        <label for="exitDateTime">Exit Date &amp; Time</label>
+        <input type="datetime-local" id="exitDateTime">
+
+        <p id="errorMessage" class="error"></p>
+
+        <div class="rate-card">
+          <h3 id="rateTitle">CAR - RATE CARD</h3>
+          <p>First hour <strong id="firstHourRate">₹50</strong></p>
+          <p>Each extra hour <strong id="additionalHourRate">₹30</strong></p>
+          <p>Grace <strong>15 min</strong></p>
+          <p>Daily max <strong id="dailyMaxRate">₹400</strong></p>
+        </div>
+      </section>
+
+      <section class="card result">
+        <small>ESTIMATED FEE</small>
+        <h2 id="estimatedFee">₹0</h2>
+        <p id="summaryText">Enter parking details</p>
+
+        <div class="breakdown">
+          <h3>Fee Breakdown</h3>
+          <p>Total duration <strong id="durationValue">--</strong></p>
+          <p>Billable hours <strong id="billableHours">--</strong></p>
+          <p>First hour <strong id="breakdownFirstHour">₹0</strong></p>
+          <p>Extra hours <strong id="extraHours">₹0</strong></p>
+          <p>Daily cap <strong id="dailyCap">Not applied</strong></p>
+        </div>
+
+        <p class="total">Total Payable <strong id="totalPayable">₹0</strong></p>
+        <p id="note" class="note">Enter valid entry and exit times.</p>
+      </section>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
